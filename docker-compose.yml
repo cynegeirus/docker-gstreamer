@@ -1,0 +1,12 @@
+services:
+  gstreamer:
+    build: .
+    image: akinbicer/gstreamer
+    container_name: gstreamer
+    ports:
+      - "5000:5000/udp"
+      - "8080:8080"
+    volumes:
+      - ./streamer:/app
+      - ./hls:/app/hls
+    restart: always
